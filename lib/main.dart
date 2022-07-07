@@ -131,7 +131,7 @@ class _StarLifeState extends State<StarLife> {
 
                       Container(height: 30),
                       Container(child: Column(children: [ Row(children: [Text('핵융합 질량 결손 비율 : 0.7%', style: TextStyle(fontSize: 13))],), Container(height: 5), Row(children: [Text('핵융합 참여 수소 비율 : 10%', style: TextStyle(fontSize: 13))],), Container(height: 5), Row(children: [Text('빛의 속도 : 3 * 10^8 m/s', style: TextStyle(fontSize: 13))],),Container(height: 5), Row(children: [Text('1년 : 3 * 10^7 s,  ', style: TextStyle(fontSize: 13)), Text('π : 3.14', style: TextStyle(fontSize: 13))],)],)),
-                      Row(children: [Text('* 입력되는 값을 예시처럼 고쳐주세요 ex) 3 * 10^7 => 3e+7', style: TextStyle(fontSize: 13)),],),
+                      Row(children: [Text('* 입력되는 값을 예시처럼 고쳐주세요 \nex) 3 * 10^7 => 3e+7 (e+n = 10^n)', style: TextStyle(fontSize: 13)),],),
                     ]
                 )
             ),
