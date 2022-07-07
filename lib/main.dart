@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
+import 'package:flutter/services.dart';
+
 void main() {
   runApp(const SLC());
 }
@@ -104,19 +106,26 @@ class _StarLifeState extends State<StarLife> {
                       Container(height: 15),
                       Container(
                         child: Row( children: [Text('별의 질량 : ', style: TextStyle(fontSize: 18)), Container(width: 10),
-                          Flexible(child: Container(child: Padding(child: TextField(keyboardType: TextInputType.number, controller: starmass, decoration: InputDecoration(hintText: '이 별은 얼마나 무거운가요?',),), padding: EdgeInsets.only(left:10, right: 10)))),
+                          Flexible(child: Container(child: Padding(child: TextField(inputFormatters: [
+                            FilteringTextInputFormatter.allow(RegExp(r'[0-9e+-]')),
+                          ],
+                            controller: starmass, decoration: InputDecoration(hintText: '이 별은 얼마나 무거운가요?',),), padding: EdgeInsets.only(left:10, right: 10)))),
                           Text('Kg', style: TextStyle(fontSize: 18)), Container(width: 20),],),
                       ),
                       Container(height: 15),
                       Container(
                         child: Row( children: [Text('별의 반지름 : ', style: TextStyle(fontSize: 18)), Container(width: 10),
-                          Flexible(child: Container(child: Padding(child: TextField(keyboardType: TextInputType.number, controller: starradius, decoration: InputDecoration(hintText: '이 별은 얼마나 큰가요?',),), padding: EdgeInsets.only(left:10, right: 10)))),
+                          Flexible(child: Container(child: Padding(child: TextField(inputFormatters: [
+                              FilteringTextInputFormatter.allow(RegExp(r'[0-9e+-]')),
+                            ], controller: starradius, decoration: InputDecoration(hintText: '이 별은 얼마나 큰가요?',),), padding: EdgeInsets.only(left:10, right: 10)))),
                           Text('Km', style: TextStyle(fontSize: 18)), Container(width: 20),],),
                       ),
                       Container(height: 15),
                       Container(
                         child: Row( children: [Text('별의 표면온도 : ', style: TextStyle(fontSize: 18)), Container(width: 10),
-                          Flexible(child: Container(child: Padding(child: TextField(keyboardType: TextInputType.number, controller: startemper, decoration: InputDecoration(hintText: '이 별은 얼마나 뜨거운가요?',),), padding: EdgeInsets.only(left:10, right: 10)))),
+                          Flexible(child: Container(child: Padding(child: TextField(inputFormatters: [
+                            FilteringTextInputFormatter.allow(RegExp(r'[0-9e+-]')),
+                          ], controller: startemper, decoration: InputDecoration(hintText: '이 별은 얼마나 뜨거운가요?',),), padding: EdgeInsets.only(left:10, right: 10)))),
                           Text('K ', style: TextStyle(fontSize: 18)), Container(width: 28),],),
                       ),
 
@@ -164,7 +173,7 @@ class _StarLifeState extends State<StarLife> {
                       ),
                       Container(height: 25),
                       Container(
-                        child: Row( children: [Text('단위 시간당 방출 에너지는 \n${E} Kg * m^2 / s^3 이고', style: TextStyle(fontSize: 18)), Container(width: 10),
+                        child: Row( children: [Text('단위 시간당 방출 에너지는 \n${E} \nKg * m^2 / s^3 이고', style: TextStyle(fontSize: 18)), Container(width: 10),
                         ],),
                       ),
                       Container(height: 25),
