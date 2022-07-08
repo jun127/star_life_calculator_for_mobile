@@ -175,7 +175,7 @@ class _StarLifeState extends State<StarLife> {
                       ),
                       Container(height: 25),
                       Container(
-                        child: Row( children: [Text('단위 시간당 방출 에너지는 \n${ET} Kg / s^3 이고', style: TextStyle(fontSize: 18)), Container(width: 10),
+                        child: Row( children: [Text('단위 시간당 방출 에너지는 \n${ET} W * m^-2 이고', style: TextStyle(fontSize: 18)), Container(width: 10),
                         ],),
                       ),
                       Container(height: 25),
